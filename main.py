@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def index():
     if 'media' not in request.files:
-        return make_response('Send file with header image', 404)
+        return make_response('Send file with image header', 404)
     file = request.files['media']
     file.filename = werkzeug.utils.secure_filename(file.filename)
     if file.filename.split('.')[1] not in ALLOWED_EXTENSIONS:
