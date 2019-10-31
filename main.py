@@ -13,7 +13,7 @@ def index():
     file = request.files['media']
     file.filename = werkzeug.utils.secure_filename(file.filename)
     if file.filename.split('.')[1] not in ALLOWED_EXTENSIONS:
-        return make_response('Send image file with extention *.jpg, *.jpeg, *.png', 404)
+        return make_response('Send image file with extention *.jpg, *.jpeg, *.png, *.tiff', 404)
     process(file)
     return (' ', 204)
 
