@@ -1,7 +1,7 @@
-from flask import Flask, request, make_response
+from flask import Flask, request, make_response, jsonify
 from processing import process
 import werkzeug
-from config import ALLOWED_EXTENSIONS, HOST, PORT
+from config import ALLOWED_EXTENSIONS, HOST, PORT, TEST_JSON
 
 
 app = Flask(__name__)
@@ -15,6 +15,7 @@ def index():
     if file.filename.split('.')[1] not in ALLOWED_EXTENSIONS:
         return make_response('Send image file with extention *.jpg, *.jpeg, *.png, *.tiff', 404)
     process(file)
+    # return jsonify(TEST_JSON)
     return (' ', 204)
 
 
