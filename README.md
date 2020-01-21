@@ -1,1 +1,1 @@
-The server receives images and sends it for processing.
+Opencv recognise program. Select the image contour which will need to find and register the path to it in config.py file option URL_IMG (examples are in the images folder). After run client.py and server.py
